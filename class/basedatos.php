@@ -12,6 +12,12 @@ abstract class basedatos
     protected $ErrNo;
     protected $ErrTxt;
 
+    // ========== NUEVO CONSTRUCTOR ==========
+    public function __construct() {
+        $this->conectar();  // Establece la conexión al instanciar
+    }
+    // =======================================
+
     abstract protected function consultar();
     abstract protected function insertar();
     abstract protected function actualizar();

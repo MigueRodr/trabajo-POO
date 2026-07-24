@@ -1,16 +1,28 @@
 <?php
-# Incluir la clase Documento_identidad
-include '../../class/c_documento_identidad.php';
+require_once '../../class/c_documento_identidad.php';
 
-# Crear el objeto Documento_identidad
-$obj = new Documento_identidad();
+$obj = new c_documento_identidad();
+if (isset($_GET['nuip'])) {
+    $obj->setNuip($_GET['nuip']);
+    $obj->consultar();
 
-# Establecer la clave primaria para eliminar
-$obj->setNuip($_POST['nuip']);
+    // Eliminar archivos asociados
+    $campos = ['huella', 'foro_persona', 'firma_persona', 'qr', 'firma_registrador'];
+    foreach ($campos as $campo) {
+        $getter = 'get' . ucfirst($campo);
+        $archivo = $obj->$getter();
+        if ($archivo && file_exists('../../uploads/' . $archivo)) {
+            unlink('../../uploads/' . $archivo);
+        }
+    }
 
-# Eliminar de la base de datos
-$obj->eliminar();
-
-# Redirigir al listado
-header("Location: ../../l_documento_identidad.php");
+    if ($obj->eliminar()) {
+        header("Location: ../../l_documento_identidad.php?mensaje=eliminado");
+    } else {
+        header("Location: ../../l_documento_identidad.php?error=Error al eliminar");
+    }
+} else {
+    header("Location: ../../l_documento_identidad.php");
+}
+exit;
 ?>
