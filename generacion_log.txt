@@ -1,0 +1,43 @@
+=== INICIO DE GENERACIÓN ===
+Base de datos: persona
+Tablas seleccionadas: documento_identidad
+Directorio base: C:\xampp\htdocs\BACKUP HOY\creator_v2.1\output\persona
+
+=== GENERANDO CLASES ===
+✓ Clase Documento_identidad generada correctamente
+
+=== GENERANDO CONTROLADORES ===
+✓ Controlador crear generado para documento_identidad: op_crear.php
+✓ Controlador actualizar generado para documento_identidad: op_actualizar.php
+✓ Controlador eliminar generado para documento_identidad: op_eliminar.php
+
+=== GENERANDO ARCHIVOS LISTAR ===
+✓ Archivo listar generado: l_documento_identidad.php
+
+=== GENERANDO ARCHIVO INDEX ===
+✓ Archivo index generado: C:\xampp\htdocs\BACKUP HOY\creator_v2.1\output\persona\index.php
+
+=== GENERANDO FORMULARIOS CREAR ===
+✓ Formulario crear generado: cr_documento_identidad.php
+
+=== GENERANDO FORMULARIOS ACTUALIZAR ===
+✓ Formulario actualizar generado: ac_documento_identidad.php
+=== GENERANDO BACKUP ===
+✓ Backup generado correctamente
+
+=== ESTRUCTURA GENERADA ===
+├── backup/
+│   └── backup_persona_20260724_205209.sql (819 B)
+├── class/
+│   ├── basedatos.php (2.27 KB)
+│   └── c_documento_identidad.php (9.04 KB)
+├── controllers/
+│   └── documento_identidad/
+│       ├── op_actualizar.php (1.29 KB)
+│       ├── op_crear.php (1.49 KB)
+│       └── op_eliminar.php (373 B)
+├── ac_documento_identidad.php (7.34 KB)
+├── cr_documento_identidad.php (5.75 KB)
+├── index.php (325 B)
+└── l_documento_identidad.php (3.88 KB)
+
