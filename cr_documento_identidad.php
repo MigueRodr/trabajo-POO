@@ -20,67 +20,123 @@
     <div class="form-container">
         <h2>Crear Documento_identidad</h2>
         <form action="controllers/documento_identidad/op_crear.php" method="post">
+            
             <div class="form-group">
                 <label for="nuip">Nuip:</label>
                 <input type="text" name="nuip" id="nuip" placeholder="Ingrese Nuip" required>
-            </div>            <div class="form-group">
+            </div>
+
+            <div class="form-group">
                 <label for="tipo_documento">Tipo documento:</label>
-                <input type="number" name="tipo_documento" id="tipo_documento" placeholder="Ingrese Tipo documento" required>
-            </div>            <div class="form-group">
+                <select name="tipo_documento" id="tipo_documento" required>
+                    <option value="0">CC</option>
+                    <option value="1">TI</option>
+                    <option value="2">RC</option>
+                    <option value="3">PA</option>
+                    <option value="4">CE</option>
+                    <option value="5">TE</option>
+                    <option value="6">PPT</option>
+                    <option value="7">PEP</option>
+                    <option value="8">NIT</option>
+                    <option value="9">CD</option>
+                </select>
+            </div>            
+            
+            <div class="form-group">
                 <label for="apellidos">Apellidos:</label>
                 <textarea name="apellidos" id="apellidos" placeholder="Ingrese Apellidos" required rows="4"></textarea>
-            </div>            <div class="form-group">
+            </div>            
+            
+            <div class="form-group">
                 <label for="nombres">Nombres:</label>
                 <textarea name="nombres" id="nombres" placeholder="Ingrese Nombres" required rows="4"></textarea>
-            </div>            <div class="form-group">
+            </div>            
+            
+            <div class="form-group">
                 <label for="nacionalidad">Nacionalidad:</label>
-                <input type="number" name="nacionalidad" id="nacionalidad" placeholder="Ingrese Nacionalidad" required>
-            </div>            <div class="form-group">
+                <input name="tinytext" name="nacionalidad" id="nacionalidad" placeholder="Ingrese Nacionalidad" required>
+            </div>            
+            
+            <div class="form-group">
                 <label for="fecha_nacimiento">Fecha nacimiento:</label>
                 <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" required>
-            </div>            <div class="form-group">
+            </div>            
+            
+            <div class="form-group">
                 <label for="lugar_nacimiento">Lugar nacimiento:</label>
                 <textarea name="lugar_nacimiento" id="lugar_nacimiento" placeholder="Ingrese Lugar nacimiento" required rows="4"></textarea>
-            </div>            <div class="form-group">
+            </div>            
+            
+            <div class="form-group">
                 <label for="estatura">Estatura:</label>
                 <textarea name="estatura" id="estatura" placeholder="Ingrese Estatura" required rows="4"></textarea>
-            </div>            <div class="form-group">
+            </div>            
+            
+          <!-- Se cambio a M y F--> 
+            <div class="form-group">
                 <label for="sexo">Sexo:</label>
                 <select name="sexo" id="sexo" required>
                     <option value="1">M</option>
                     <option value="0">F</option>
                 </select>
-            </div>            <div class="form-group">
+            </div>            
+            
+            <div class="form-group">
                 <label for="grupo_sanguineo">Grupo sanguineo:</label>
                 <textarea name="grupo_sanguineo" id="grupo_sanguineo" placeholder="Ingrese Grupo sanguineo" required rows="4"></textarea>
-            </div>            <div class="form-group">
+            </div>            
+            
+            <div class="form-group">
                 <label for="fecha_expedicion">Fecha expedicion:</label>
                 <input type="date" name="fecha_expedicion" id="fecha_expedicion" required>
-            </div>            <div class="form-group">
+            </div>            
+            
+            <div class="form-group">
                 <label for="lugar_expedicion">Lugar expedicion:</label>
                 <textarea name="lugar_expedicion" id="lugar_expedicion" placeholder="Ingrese Lugar expedicion" required rows="4"></textarea>
-            </div>            <div class="form-group">
+            </div>            
+            
+            <div class="form-group">
                 <label for="huella">Huella:</label>
                 <textarea name="huella" id="huella" placeholder="Ingrese Huella" required rows="4"></textarea>
-            </div>            <div class="form-group">
-                <label for="foro_persona">Foro persona:</label>
-                <textarea name="foro_persona" id="foro_persona" placeholder="Ingrese Foro persona" required rows="4"></textarea>
-            </div>            <div class="form-group">
+            </div>            
+            
+
+            <!-- Se agrego para subir las fotos--> 
+             <div class="form-group">
+             <!-- Etiqueta del campo -->
+             <label for="foto">Foto de la persona:</label>
+    
+             <!-- Campo correcto para subir la imagen -->
+             <input type="file" id="foto" name="foto" accept="image/*" required>
+             </div>
+     
+            
+            <div class="form-group">
                 <label for="fecha_expiracion">Fecha expiracion:</label>
                 <input type="date" name="fecha_expiracion" id="fecha_expiracion" required>
-            </div>            <div class="form-group">
+            </div>            
+            
+            <div class="form-group">
                 <label for="firma_persona">Firma persona:</label>
                 <textarea name="firma_persona" id="firma_persona" placeholder="Ingrese Firma persona" required rows="4"></textarea>
-            </div>            <div class="form-group">
+            </div>            
+            
+            <div class="form-group">
                 <label for="qr">Qr:</label>
                 <textarea name="qr" id="qr" placeholder="Ingrese Qr" required rows="4"></textarea>
-            </div>            <div class="form-group">
+            </div>            
+            
+            <div class="form-group">
                 <label for="firma_registrador">Firma registrador:</label>
                 <textarea name="firma_registrador" id="firma_registrador" placeholder="Ingrese Firma registrador" required rows="4"></textarea>
-            </div>            <div class="form-group">
+            </div>            
+            
+            <div class="form-group">
                 <label for="codigo_verificacion">Codigo verificacion:</label>
                 <textarea name="codigo_verificacion" id="codigo_verificacion" placeholder="Ingrese Codigo verificacion" required rows="4"></textarea>
             </div>
+            
             <div class="form-group">
                 <button type="submit">Guardar</button>
                 <a href="l_documento_identidad.php" class="back-link">Cancelar</a>
